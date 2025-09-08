@@ -1,0 +1,431 @@
+.page-template-template-eventos {
+	.contenedor {
+    display: flex;
+    width: max-content;
+
+    .panel { 
+      height: 100vh;
+    }
+
+    .panel-historico {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .cont-principal {
+      width: 95vw;
+      height: inherit;
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+
+      .col-intro {
+        display: flex;
+        flex-direction: column;
+        max-width: 35%;
+        justify-content: center;
+
+        .imagen-uno {
+          display: flex;
+          align-self: flex-end;
+          padding: 5px;
+  
+          @include capa-Imagen($coverImg: contain);
+        }
+
+        .texto-seccion {
+          display: flex;
+          flex-direction: column;
+  
+          .tit-seccion {
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 3% 1% 2%;
+            font-family: $tipoEspecial;
+            font-size: calc(1em + 7vw);
+            line-height: 1;
+            position: relative;
+            text-transform: uppercase;
+          }
+  
+          @include capa-Imagen($coverImg: contain);
+  
+          img {
+            height: 70%;
+            width: 80%;
+          }
+        }
+      }
+
+      .col-destacados {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 80vh;
+        width: 65%;
+
+        .sin-evento {
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+
+        .destacados {
+          display: flex;
+          height: 50%;
+          width: 50%;
+          position: relative;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+
+    .cont-general-actual {
+      display: grid;
+
+      .contenedor-actual {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+
+        .items-eventos {
+          @include capa-Imagen($coverImg: contain);
+        }
+      }
+    }
+
+    .cont-general-historico {
+      display: flex;
+      grid-template-columns: auto auto;
+      grid-template-rows: 10vh auto auto 15vh;
+
+      .titulo-historico {
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 3% 1% 2%;
+        font-family: $tipoEspecial;
+        font-size: calc(1em + 7vw);
+        line-height: 1;
+        position: relative;
+        text-transform: uppercase;
+        width: max-content;
+        z-index: 99;
+        align-self: center;
+        grid-column: 1 / 2;
+        grid-row: 1 / 4;
+        padding: 0 2vw;
+
+        @include capa-Imagen($coverImg: contain);
+
+        img {
+          display: block;
+        }
+      }
+
+      .contenedor-historico {
+        align-items: center;
+        display: grid;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100%;
+        min-width: 120vw;
+        grid-template-columns: repeat( 6, calc(120vw / 6) );
+        grid-template-rows: repeat( 3, calc(100% / 3) );
+        align-items: center;
+
+        .btn-ver-mas {
+          background-color: $principal;
+          border: $blanco solid 2px;
+          color: $blanco;
+          border-radius: 5px;
+          padding: 5px 20px;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-items: center;
+          width: max-content;
+          text-transform: uppercase;
+          font-size: calc(1rem + 1vw);
+          margin: 0 auto;
+          
+          &:hover {
+            border: $principal solid 2px;
+            color: $principal;
+            background-color: transparent;
+            cursor: pointer;
+          }
+        }
+
+        .items-eventos {
+          display: flex;
+          position: relative;
+
+          .contEventogrid {
+            position: absolute;
+            z-index: 99;
+            max-width: 80%;
+            bottom: 0;
+            left: 2%;
+
+            .descTitulo {
+              font-size: 1.2rem;
+              background-color: rgba(0, 0, 0, 0.9);
+              padding: 1%;
+              color: $blanco;
+            }
+
+            .fecEvento {
+              display: none;
+            }
+          }
+
+          @include capa-Imagen($coverImg: contain);
+
+          .imagen-evento {
+            filter: grayscale(1);
+          }
+
+          &:hover {
+            .imagen-evento {
+              filter: none;
+            }
+          }
+        }
+      }
+    }
+
+    .final-seccion-taste {
+      position: relative;
+      height: 100vh;
+  
+      @include capa-Imagen($coverImg: contain);
+  
+      .final-vertical {
+        display: block;
+      }
+  
+      .final-horizontal {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 767px){
+    .contenedor {
+      width: 100%;
+      height: auto;
+      display: block;
+      padding-bottom: 5vh;
+
+      .panel { 
+        height: auto;
+      }
+  
+      .panel-historico {
+        height: auto;
+      }
+
+      .cont-principal {
+        width: 100vw;
+        height: inherit;
+        padding: 0 5%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 13vh;
+  
+        .col-intro {
+          display: flex;
+          flex-direction: column;
+          max-width: 100%;
+          justify-content: center;
+  
+          .imagen-uno {
+            display: flex;
+            align-self: flex-end;
+            padding: 5px;
+    
+            @include capa-Imagen($coverImg: contain);
+          }
+  
+          .texto-seccion {
+            display: flex;
+            flex-direction: column;
+    
+            .tit-seccion {
+              text-transform: uppercase;
+              font-weight: bold;
+              padding: 3% 1% 2%;
+              font-family: $tipoEspecial;
+              font-size: calc(1em + 17vw);
+              line-height: 1;
+              position: relative;
+              text-transform: uppercase;
+            }
+    
+            @include capa-Imagen($coverImg: contain);
+    
+            img {
+              height: 70%;
+              width: 80%;
+            }
+          }
+        }
+  
+        .col-destacados {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          height: auto;
+          width: 100%;
+  
+          .destacados {
+            display: flex;
+            height: auto;
+            width: 100%;
+            position: relative;
+  
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .no-agenda {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            
+            .img-no-agenda {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .cont-general-actual {
+        display: grid;
+  
+        .contenedor-actual {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          grid-column: 2 / 3;
+          grid-row: 1 / 2;
+  
+          .items-eventos {
+            @include capa-Imagen($coverImg: contain);
+          }
+        }
+      }
+  
+      .cont-general-historico {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        padding: 4vh;
+  
+        .titulo-historico {
+          text-transform: uppercase;
+          font-weight: bold;
+          padding: 3% 1% 2%;
+          font-family: $tipoEspecial;
+          font-size: calc(1em + 10vw);
+          line-height: 1;
+          position: relative;
+          text-transform: uppercase;
+          width: auto;
+          z-index: 99;
+          align-self: center;
+          padding: 0 2vw;
+  
+          @include capa-Imagen($coverImg: contain);
+  
+          img {
+            display: block;
+          }
+        }
+  
+        .contenedor-historico {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          height: auto;
+          width: 100%;
+          min-width: auto;
+
+          .items-eventos {
+            height: 32%;
+            display: flex;
+            position: relative;
+  
+            .contEventogrid {
+              position: absolute;
+              z-index: 99;
+              max-width: 80%;
+              bottom: 0;
+              left: 2%;
+  
+              .descTitulo {
+                font-size: 1.2rem;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 1%;
+                color: $blanco;
+              }
+  
+              .fecEvento {
+                display: none;
+              }
+            }
+  
+            @include capa-Imagen($coverImg: contain);
+  
+            .imagen-evento {
+              filter: grayscale(1);
+            }
+  
+            &:hover {
+              .imagen-evento {
+                filter: none;
+              }
+            }
+          }
+        }
+      }
+
+      .final-seccion-taste {
+        position: relative;
+        grid-column: 1 / 6;
+        grid-row: 4 / 6;
+        height: auto;
+    
+        @include capa-Imagen($coverImg: contain);
+  
+        .final-vertical {
+          display: none;
+        }
+    
+        .final-horizontal {
+          display: block;
+        }
+      }
+    }
+
+    .menu-categorias {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+.panel-siete {
+  display: grid;
+  font-size: 1.5em;
+  width: 60vw;
+  position: relative;
+  grid-template-columns: repeat( 12, calc(100% / 12) );
+  grid-template-rows: repeat( 12, calc(100% / 12) );
+  z-index: 99;
+  height: 100vh;
+
+  .enlace-info {
+    grid-column: 2 / 4;
+    grid-row: 2 / 12;
+    height: 100%;
+    writing-mode: vertical-rl;
+    line-height: 1;
+    font-weight: bold;
+    font-family: $tipoEspecial;
+    font-size: calc( 1em + 10vw);
+    text-transform: uppercase;
+    transform: rotate(180deg);
+    color: $negro;
+
+    &::after {
+      opacity: 0;
+      content: '';
+      background-image:  url('https://x-madrid.santacc.homes/wp-content/themes/xmadtema/resources/images/info/tiket_hover.webp') ;
+      position: absolute;
+      transform: rotateZ(180deg);
+      height: -webkit-fill-available;
+      background-size: contain;
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      color: $principal;
+
+      &::after {
+        opacity: 1;
+        transition: 2s;
+      }
+    }
+  }
+
+  .fondo-info {
+    grid-column: 5 / 13;
+    grid-row: 1 / 13;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+
+    .enlace-info {
+      height: 100%;
+      writing-mode: horizontal-tb;
+      line-height: 1;
+      font-weight: bold;
+      font-family: $tipoEspecial;
+      font-size: calc( 1em + 17vw);
+      text-transform: uppercase;
+      transform: none;
+      color: $negro;
+  
+      &::after {
+        display: none;
+      }
+  
+      &:hover {
+        color: $principal;
+  
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    .lateral-info {
+      grid-column: 1 / 5;
+      grid-row: 1 / 2;
+      width: 100%;
+      height: auto;
+    }
+  
+    .fondo-info {
+      grid-column: 3 / 7;
+      grid-row: 2 / 3;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

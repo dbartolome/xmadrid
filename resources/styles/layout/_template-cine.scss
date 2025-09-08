@@ -1,0 +1,150 @@
+.page-template-template-cine {
+  overflow-x: hidden;
+	overflow-y: scroll;
+
+	.contenedor {
+    display: flex;
+    width: max-content;
+
+    .panel { 
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      height: 92vh;
+      row-gap: 30px;
+      justify-content: flex-end;
+
+      .listado-superior {
+        display: flex;
+		    flex-direction: row;
+		    flex-wrap: nowrap;
+        height: 45%;
+
+        .fichaPeli {
+          border: solid 1px #f2f2f2;
+          cursor: pointer;
+          margin-bottom: 15px;
+          padding: 0;
+          position: relative;
+
+          img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+          }
+
+          .contenido {
+            position: absolute;
+            background-color: rgba(0,0,0,.6);
+            color: #fff;
+            width: 100%;
+            top: 0;
+            padding: 4%;
+            font-size: 1.3em;
+
+            .masInfoPeli {
+              font-size: 1rem;
+            }
+          }
+
+          .btnComprar {
+            background-color: #d10000;
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            padding: 2%;
+            text-align: center;
+            text-transform: uppercase;
+          }
+
+          .capaHorarios {
+            background-color: rgba(256, 256, 256, 0.8);
+            color: #000;
+            cursor: default;
+            display: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            height: 90%;
+            overflow: scroll;
+            padding: 3%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+
+            a {
+              cursor: pointer !important;
+            }
+          }
+        }
+      }
+
+      .listado-inferior {
+        display: flex;
+		    flex-direction: row;
+		    flex-wrap: nowrap;
+        height: 45%;
+
+        .fichaPeli {
+          border: solid 1px #f2f2f2;
+          cursor: pointer;
+          flex: none;
+          margin-bottom: 15px;
+          padding: 0;
+          position: relative;
+
+          img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+          }
+      
+          .contenido {
+            position: absolute;
+            background-color: rgba(0,0,0,.6);
+            color: #fff;
+            width: 100%;
+            top: 0;
+            padding: 4%;
+            font-size: 1.3em;
+
+            .masInfoPeli {
+              font-size: 1rem;
+            }
+          }
+      
+          .btnComprar {
+            background-color: #d10000;
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            padding: 2%;
+            text-align: center;
+            text-transform: uppercase;
+          }
+      
+          .capaHorarios {
+            background-color: rgba(256, 256, 256, 0.8);
+            color: #000;
+            cursor: default;
+            display: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            height: 90%;
+            overflow: scroll;
+            padding: 3%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+      
+            a {
+              cursor: pointer !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

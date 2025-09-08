@@ -1,0 +1,41 @@
+{
+  "name": "sage",
+  "private": true,
+  "browserslist": [
+    "extends @roots/browserslist-config"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "bud dev",
+    "build": "bud build",
+    "translate": "yarn translate:pot && yarn translate:update",
+    "translate:pot": "wp i18n make-pot . ./resources/lang/sage.pot --include=\"app,resources\"",
+    "translate:update": "for filename in ./resources/lang/*.po; do msgmerge -U $filename ./resources/lang/sage.pot; done; rm -f ./resources/lang/*.po~",
+    "translate:compile": "yarn translate:mo && yarn translate:js",
+    "translate:js": "wp i18n make-json ./resources/lang --pretty-print",
+    "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang",
+    "lint": "yarn lint:js && yarn lint:css",
+    "lint:js": "eslint resources/scripts",
+    "lint:css": "stylelint \"resources/**/*.{css,scss,vue}\"",
+    "test": "yarn lint"
+  },
+  "devDependencies": {
+    "@popperjs/core": "^2.11.6",
+    "@roots/bud": "6.8.0",
+    "@roots/bud-postcss": "^6.11.0",
+    "@roots/sage": "6.8.0",
+    "bootstrap": "^5.2.3",
+    "eslint": "^8.42.0"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.6.0",
+    "@roots/bud-sass": "^6.9.1",
+    "caniuse-lite": "^1.0.30001727",
+    "gsap": "^3.13.0",
+    "hamburgers": "^1.2.1",
+    "jquery": "^3.6.3"
+  }
+}

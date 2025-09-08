@@ -1,0 +1,334 @@
+.single-taste,
+.single-ocioydeporte,
+.single-shop {
+  .contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100vh;
+  
+    .panel {
+      display: flex;
+  
+      & > div {
+        position: relative;
+      }
+    }
+
+    svg {
+      path {
+        fill: #d9a032;
+      }
+    }
+
+    .cont-principal {
+      display: flex;
+      padding: 0 0 0 8vw;
+      width: 65vw;
+      flex-direction: column;
+      justify-content: center;
+
+      .text-operador {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        max-height: 54%;
+        margin-bottom: 1%;
+        overflow: scroll;
+  
+        .cont-texto-operador {
+          background-color: black;
+          color: #fff;
+          padding: 3%;
+  
+          .tit-informacion {
+            display: block;
+            margin-bottom: 2%;
+          }
+        }
+      }
+
+      .camino-interior-inicio {
+        bottom: -5vh;
+        height: 109vh;
+        left: 0;
+        position: absolute;
+        z-index: 0;
+      }
+
+      .slider-imagen {
+        display: block;
+        position: relative;
+        z-index: 1;
+        max-height: 45%;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .cont-horarios {
+      display: flex;
+      flex-direction: column;
+      width: 50vw;
+      justify-content: center;
+      padding: 0 6vw;
+      position: relative;
+      z-index: 99;
+
+      .capa-operador {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: row;
+
+        .titulo {
+          font-size: calc(1em + 1vw);
+          color: $principal;
+          font-weight: bold;
+        }
+
+        .logo-operador {
+          width: 40%;
+
+          .menus-especiales {
+            display: flex;
+            flex-direction: row;
+            background-color: #fff;
+
+            .img-menus-especiales {
+              max-width: 50px;
+            }
+          }
+
+          .img-logo-operador {
+            width: 100%;
+          }
+        }
+
+        .planta-div {
+          display: block;
+          font-size: 1.3rem;
+          padding-top: 4%;
+          position: relative;
+          text-align: end;
+          text-transform: uppercase;
+          z-index: 1;
+          width: 60%;
+          display: flex;
+          align-items: end;
+          flex-direction: column;
+  
+          .boton-verplano {
+            background-color: $principal;
+            border: none;
+            color: $blanco;
+            font-family: $tipoEspecial;
+            font-size: 1.3rem;
+            padding: 1% 3%;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      .categoria-operador {
+        position: relative;
+        z-index: 99;
+
+        .name-operador {
+          display: flex;
+          font-family: $tipoEspecial;
+          font-size: calc(1em + 1vw);
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+
+        .imagenes-bajologo {
+          display: inline-flex;
+
+          .img-flechas {
+            width: 40%;
+          }
+        }
+      }
+  
+      .col-horarios {
+        position: relative;
+        z-index: 2;
+        background-color: rgba(256, 256, 256 , 0.3);
+        display: flex;
+        flex-direction: column;
+  
+        .titulo-horarios {
+          font-family: $tipoEspecial;
+          font-size: calc(1em + 0.5vw);
+          color: $principal;
+          font-weight: bold;
+        }
+  
+        .texto-horarios {
+          font-size: calc(1em + 0.1vw);
+          line-height: 1.2;
+          margin-bottom: 3%;
+        }
+  
+        .text-inforeservas {
+          color: $principal;
+          font-family: $tipoEspecial;
+          font-size: calc(1em + 0.5vw);
+          line-height: 1.2;
+          font-weight: bold;
+        }
+  
+        .especificacion {
+          display: block;
+          line-height: 1.2;
+        }
+        
+        .info-mail {
+          font-size: calc(1em + 0.1vw);
+          line-height: 1.2;
+          margin-bottom: 3%;
+        }
+  
+        .tel-info {
+          font-family: $tipoEspecial;
+          font-size: calc(1em + 0.5vw);
+          line-height: 1.2;
+          margin-bottom: 3%;
+        }
+
+        .btn-irweb {
+          align-items: center;
+          background-color: $principal;
+          color: $blanco;
+          display: flex;
+          font-family: $tipoEspecial;
+          font-size: calc(1em + 0.4vw);
+          justify-content: center;
+          padding: 0 2%;
+          width: fit-content;
+        }
+      }
+  
+      .camino-interior-horarios {
+        bottom: -5vh;
+        height: 109vh;
+        left: 14vh;
+        position: absolute;
+        z-index: 0;
+      }
+    }
+      
+    .cont-final {
+      display: flex;
+      width: 12vw;
+  
+      .parte-final {
+        grid-column: 11 / 13;
+        grid-row: 1 / 13;
+        position: relative;
+        z-index: 1;
+  
+        .logo-desktop {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .logo-movil {
+          display: none;
+        }
+      }
+      
+      .camino-interior-final {
+        bottom: -5vh;
+        height: 109vh;
+        position: absolute;
+        right: 0;
+        z-index: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px){
+  body, html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .single-taste,
+  .single-ocioydeporte,
+  .single-shop {
+    .contenedor {
+      width: 100%;
+      height: auto;
+      display: block;
+
+      .cont-principal {
+        display: flex;
+        flex-direction: column;
+        padding: 17vh 2vw 5vh;
+        width: 100vh;
+
+        .text-operador {
+          max-height: initial;
+          overflow: initial;
+        }
+
+        .slider-imagen {
+          max-height: initial;
+        }
+
+        .camino-interior-inicio {
+          display: none;
+        }
+      }
+    
+      .cont-horarios {
+        width: 100vw;
+        height: auto;
+        min-height: 50vh;
+      
+        .col-horarios {
+          grid-column: 2 / 13;
+          grid-row: 2 / 13;
+          position: relative;
+          z-index: 2;
+        }
+      
+        .camino-interior-horarios {
+          display: none;
+        }
+      }
+          
+      .cont-final {
+        height: auto;
+        width: 100vw;
+        padding: 4vh 0 0 0;
+
+        .parte-final {
+          position: relative;
+          z-index: 1;
+
+          .logo-desktop {
+             display: none;
+          }
+
+          .logo-movil {
+            display: block;
+          }
+        }
+
+        .camino-interior-final {
+          display: none;
+        }
+      }
+    }
+  }
+}

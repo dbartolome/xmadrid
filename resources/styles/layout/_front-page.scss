@@ -1,0 +1,54 @@
+.home {
+	.main {
+		height: 100vh !important;
+	}
+
+	.contenedor {
+		height: 100vh !important;
+		display: flex;
+		flex-wrap: nowrap;
+		flex-direction: row;
+
+		.panel {
+			display: flex;
+		}
+
+		.panel-corto {
+			height: 93vh;
+		}
+
+		@import "../layout/partials/front-page/seccion-intro";
+		@import "../layout/partials/front-page/seccion-shopping";
+		@import "../layout/partials/front-page/seccion-telefono";
+		@import "../layout/partials/front-page/seccion-events";
+		@import "../layout/partials/front-page/seccion-intro-experience";
+		@import "../layout/partials/front-page/seccion-destacados-ex";
+		@import "../layout/partials/front-page/seccion-info";
+	}
+
+	.skate-inferior {
+		position: fixed;
+		width: 100%;
+		right: 0;
+		max-width: 250px;
+		bottom: 1vh;
+		z-index: 999;
+	}
+
+	@media (max-width: 767px){
+		.contenedor {
+			width: 100%;
+			height: auto;
+			display: block;
+			overflow-x: hidden;
+
+			.panel-corto {
+				height: auto;
+			}
+		}
+
+		.skate-inferior {
+			display: none;
+		}
+	}
+}

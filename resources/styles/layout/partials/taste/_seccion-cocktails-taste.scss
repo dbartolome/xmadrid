@@ -1,0 +1,58 @@
+.sec-cocktails {
+  background-position: bottom;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat( 12, calc(100% / 12) );
+  grid-template-rows: repeat( 12, calc(100% / 12) );
+  width: 100vw;
+  z-index: 9;
+
+  .item1-cocktails {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    grid-column: 4 / 8;
+    grid-row: 10 / 12;
+    justify-content: center;
+    position: relative;
+    z-index: 999;
+
+    .tit-seccion-cocktails {
+      font-family: $tipoEspecial;
+      font-size: calc(1em + 5vw);
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  .img-terraza {
+    grid-column: 8 / 13;
+    grid-row: 8 / 13;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  @include seccion-logos($posicion-col-inicio: 2, $posicion-col-fin: 12, $posicion-row-inicio: 2,  $posicion-row-fin: 7, $numero-col: calc(80% / 4));
+}
+
+@media (max-width: 768px) {
+  .sec-cocktails {
+
+    @include responsive-seccion-completa();
+
+    .item1-cocktails {
+      .tit-seccion-cocktails {
+        font-size: calc(1em + 7vw);
+      }
+    }
+
+    @include responsive-seccion-logos();
+
+    .img-terraza {
+      max-width: 60vw;
+      margin: 0 auto;
+    }
+  }
+}

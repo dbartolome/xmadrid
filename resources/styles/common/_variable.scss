@@ -1,0 +1,26 @@
+$fuenteBasica: 1.2rem;
+
+$tipoEspecial: "Oswald", sans-serif;
+// Colors
+$principal: #eb2028 !default;
+$secundario: #7d725f;
+$terciario: #626161;
+$doradolinks: #ba8d54;
+$blanco: #fff;
+$negro: #000;
+
+$body-color: #162765;
+$body-bg: $blanco;
+$border-width: 1px;
+$border-radius: 0;
+
+$theme-colors: (
+  "primary":    $principal,
+  "secundario": $secundario,
+  "terciario": $terciario,
+  "doradolinks": $doradolinks,
+  "blanco": $blanco,
+  "negro": $negro,
+);
+
+$backdrop-opacity : 0.6;

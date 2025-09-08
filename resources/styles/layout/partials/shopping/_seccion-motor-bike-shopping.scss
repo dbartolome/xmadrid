@@ -1,0 +1,112 @@
+.sec-motor-bike {
+  background-size: cover;
+  width: 60vw;
+  display: grid;
+  grid-template-columns: repeat( 12, calc(100% / 12) );
+  grid-template-rows: repeat( 12, calc(100% / 12) );
+  z-index: 7;
+
+  .item1-motor-bike {
+    position: relative;
+    grid-column: 2 / 12;
+    grid-row: 2 / 4;
+    display: flex;
+    flex-direction: column;
+    
+    .tit-seccion-motor-bike {
+      line-height: 1;
+      font-weight: bold;
+      font-family: $tipoEspecial;
+      font-size: calc( 1em + 5vw );
+      text-transform: uppercase;
+      text-align: center;
+
+      .text-motor {
+        letter-spacing: 8px;
+      }
+
+      .textBike {
+        letter-spacing: 1px;
+      }
+
+      .codigo-ampersan {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: black;
+        color: #fff;
+        border-radius: 50%;
+        padding: 0 3%;
+      }
+    }
+  }
+
+  @include seccion-logos-shop($posicion-col-inicio: 2, $posicion-col-fin: 12, $posicion-row-inicio: 4,  $posicion-row-fin: 12, $numero-col: calc(80% / 4), $altura-contenedor: 100%);
+
+  .item7-motor-bike {
+    position: relative;
+    grid-column: 11 / 13;
+    grid-row: 11 / 13;
+    background-size: cover;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .camino-moto {
+    bottom: -5vh;
+    height: 109vh;
+    position: absolute;
+    right: -21vw;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sec-motor-bike {
+
+    @include responsive-seccion-completa();
+
+    padding-bottom: 0;
+
+    .item1-motor-bike {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      
+      .tit-seccion-motor-bike {
+        font-size: calc( 1em + 10vw );
+  
+        .text-motor {
+          letter-spacing: 0;
+        }
+  
+        .textBike {
+          letter-spacing: 1px;
+        }
+  
+        .codigo-ampersan {
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: black;
+          color: #fff;
+          border-radius: 50%;
+          padding: 0 3%;
+          height: calc( 1em + 1vw );
+        }
+      }
+    }
+
+    @include responsive-seccion-logos();
+
+    .item7-motor-bike {
+      background-size: cover;
+      position: relative;
+      width: 30vw;
+      align-self: end;
+      padding: 2vh 4vh;
+  
+      @include capa-Imagen($coverImg: contain);
+    }
+
+    .camino-moto {
+      display: none;
+    }
+  }
+}
