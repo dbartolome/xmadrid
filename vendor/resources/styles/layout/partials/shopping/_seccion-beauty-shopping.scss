@@ -1,0 +1,74 @@
+.sec-beauty {
+  background-size: cover;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: repeat( 12, calc(100% / 12) );
+  grid-template-rows: repeat( 12, calc(100% / 12) );
+  z-index: 6;
+
+  .item1-beauty {
+    position: relative;
+    grid-column: 1 / 12;
+    grid-row: 9 / 11;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .tit-seccion-beauty {
+      line-height: 1;
+      font-weight: bold;
+      font-family: $tipoEspecial;
+      font-size: calc(1em + 5vw);
+      text-transform: uppercase;
+      position: relative;
+    }
+  }
+
+  @include seccion-logos-shop($posicion-col-inicio: 3, $posicion-col-fin: 12, $posicion-row-inicio: 2,  $posicion-row-fin: 8, $numero-col: calc(80% / 4), $altura-contenedor: 100%);
+
+  .img-beauty {
+    grid-column: 2 / 3;
+    grid-row: 5 / 11;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .camino-beauty {
+    bottom: -5vh;
+    height: 109vh;
+    position: absolute;
+    right: -19vw;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sec-beauty {
+
+    @include responsive-seccion-completa();
+
+    .item1-beauty {
+      .tit-seccion-beauty {
+        font-size: calc(1em + 10vw);
+      }
+  
+      img {
+        position: absolute;
+        left: -10%;
+        top: -19%;
+        width: 18%;
+      }
+    }
+
+    @include responsive-seccion-logos();
+
+    .img-beauty {
+      max-width: 8vw;
+      margin: 0 auto;
+    }
+
+    .camino-beauty {
+      display: none;
+    }
+  }
+}

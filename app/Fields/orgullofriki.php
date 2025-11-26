@@ -40,7 +40,7 @@ class orgullofriki extends Field
         ->addText('tituloEvento', [
             'label' => 'Titulo para el veneto',
         ])
-        ->addWysiwyg('descripcionEvento', [
+        ->addTextarea('descripcionEvento', [
             'label' => 'Texto para el evento',
         ])
         ->addColorPicker('colorFondo', [

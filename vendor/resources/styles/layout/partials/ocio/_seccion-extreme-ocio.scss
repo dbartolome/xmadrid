@@ -1,0 +1,121 @@
+.seccion-extreme-ocio {
+  background-size: cover;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: repeat( 20, calc(100% / 20) );
+  grid-template-rows: repeat( 10, calc(100% / 10) );
+  background-position: bottom;
+  z-index: 1;
+
+  .logo-intro {
+    grid-column: 1 / 15;
+    grid-row: 2 / 6;
+    display: grid;
+
+    @include capa-Imagen($coverImg: contain);
+
+    img {
+      height: auto;
+    }
+
+    .texto-extreme {
+      font-family: $tipoEspecial;
+      font-size: calc(1em + 6vw);
+      font-weight: 700;
+      line-height: 7vw;
+      position: relative;
+      width: max-content;
+      text-transform: uppercase;
+      z-index: 99;
+
+      &::nth-letter(2) {
+        color: $principal;
+      }
+    }
+  }
+
+  .capa-globos {
+    grid-column: 14 / 19;
+    grid-row: 1 / 7;
+    position: relative;
+    z-index: 1;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .cont-logos {
+    grid-column: 1 / 14;
+    grid-row: 6 / 10;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+    .link-logo {
+      width: 23%;
+
+      @include capa-Imagen($coverImg: contain);
+    }
+  }
+
+  .camino-extreme {
+    bottom: -3vh;
+    height: 105vh;
+    position: absolute;
+    right: -20vw;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .seccion-extreme-ocio {
+    width: 100vw;
+    min-height: 60vh;
+
+    .logo-intro {
+      grid-column: 2 / 20;
+      grid-row: 2 / 6;
+  
+      @include capa-Imagen($coverImg: contain);
+  
+      img {
+        height: auto;
+      }
+  
+      .texto-extreme {
+        font-family: $tipoEspecial;
+        font-size: calc(1em + 9vw);
+        font-weight: 700;
+        line-height: 7vw;
+        position: relative;
+        width: max-content;
+        text-transform: uppercase;
+        z-index: 99;
+  
+        &::nth-letter(2) {
+          color: $principal;
+        }
+      }
+    }
+
+    .cont-logos {      
+      .link-logo {
+        width: 45%;
+      }
+    }
+
+    .capa-globos {
+      grid-column: 15 / 20;
+      grid-row: 4 / 8;
+      position: relative;
+      z-index: 1;
+  
+      @include capa-Imagen($coverImg: contain);
+    }
+
+    .camino-extreme {
+      display: none;
+    }
+  }
+}

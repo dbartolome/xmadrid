@@ -1,0 +1,104 @@
+.page-template-template-shopping {
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+	.contenedor {
+		height: 100vh;
+		display: flex;
+		flex-wrap: nowrap;
+		flex-direction: row;
+
+		.panel {
+			display: flex;
+
+			& > div {
+				position: relative;
+			}
+		}
+	
+		@import "../layout/partials/shopping/seccion-principal-shopping";
+		@import "../layout/partials/shopping/seccion-fashion-shopping";
+		@import "../layout/partials/shopping/seccion-xmarket-shopping";
+		@import "../layout/partials/shopping/seccion-motor-bike-shopping";
+		@import "../layout/partials/shopping/seccion-beauty-shopping";
+		@import "../layout/partials/shopping/seccion-accesories-shopping";
+		@import "../layout/partials/shopping/seccion-hobbies-shopping";
+		@import "../layout/partials/shopping/seccion-supermarket-shopping";
+	}
+
+	.menu-categorias {
+		display: flex;
+		flex-direction: row;
+		position: fixed;
+		left: 2vw;
+		bottom: 6.5vh;
+
+		.btnMnu {
+			background-color: rgba(0, 0, 0, 0.9);
+			color: $blanco;
+			margin: 0 1%;
+			text-transform: uppercase;
+			width: max-content;
+			white-space: nowrap;
+			padding: 0 3%;
+			font-size: calc(1em + 0.1vw);
+			font-family: $tipoEspecial;
+
+			&:hover {
+				background-color: $principal;
+				color: $negro;
+			}
+		}
+	}
+
+	@media (max-width: 767px){
+		.contenedor {
+			width: 100%;
+			height: auto;
+			display: block;
+			padding: 15vh 0 5vh;
+
+			.panel {
+				display: block;
+			}
+		}
+	
+		.last-container {
+			display: block;
+			height: 100vh;
+		}
+
+		.menu-shopping {
+			display: none;
+		}
+
+		.menu-categorias {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			left: 18vw;
+			position: fixed;
+			top: 1vh;
+			height: 8vh;
+			width: 68vw;
+			z-index: 9999;
+	
+			.btnMnu {
+				background-color: rgba(0, 0, 0, 0.9);
+				color: $blanco;
+				margin: 1%;
+				text-transform: uppercase;
+				width: max-content;
+				white-space: nowrap;
+				padding: 0 3%;
+				font-size: calc(1em + 0.1vw);
+				font-family: $tipoEspecial;
+	
+				&:hover {
+					background-color: $principal;
+					color: $negro;
+				}
+			}
+		}
+	}
+}

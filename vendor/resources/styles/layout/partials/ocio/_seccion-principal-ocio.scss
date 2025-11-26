@@ -1,0 +1,258 @@
+.seccion-principal-ocio {
+  background-position: bottom;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat( 24, calc(100% / 24) );
+  grid-template-rows: repeat( 12, calc(100% / 12) );
+  width: 100vw;
+
+  .lineas-inmersion {
+    position: absolute;
+    left: 46%;
+    height: 100%;
+    z-index: 12;
+  }
+
+  .intro-pagina {
+    grid-column: 2 / 9;
+    grid-row: 2 / 7;
+    position: relative;
+    z-index: 1;
+
+    img {
+      width: 100%;
+    }
+
+    .text-titulo-ocio {
+      text-transform: uppercase;
+      font-weight: 700;
+      text-align: center;
+      font-family: $tipoEspecial;
+      font-size: calc(1em + 4.2vw);
+      line-height: 4vw;
+      position: relative;
+      z-index: 99;
+    }
+  }
+
+  .img-oblicuas {
+    grid-column: 1 / 6;
+    grid-row: 10 / 12;
+    position: relative;
+    z-index: 2;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .boton-info {
+    grid-column: 3 / 6;
+    grid-row: 9 / 10;
+    position: relative;
+    z-index: 9;
+  }
+
+  .logo-marepolis {
+    grid-column: 9 / 13;
+    grid-row: 1 / 5;
+    position: relative;
+    z-index: 2;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .capa-buzo {
+    grid-column: 9 / 12;
+    grid-row: 4 / 10;
+    position: relative;
+    z-index: 2;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .logo-surf {
+    align-self: stretch;
+    display: flex;
+    grid-column: 16 / 19;
+    grid-row: 1 / 5;
+    position: relative;
+    z-index: 1;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .columna-central-surf {
+    align-self: end;
+    display: flex;
+    grid-column: 12 / 25;
+    grid-row: 4 / 13;
+    position: relative;
+    z-index: 1;
+
+    .enlace-surf {
+      perspective: 700px;
+      perspective-origin: 37%;
+      position: relative;
+      width: 100%;
+      height: fit-content;
+      overflow: hidden;
+
+      video { 
+        bottom: 0;
+        height: 100%;
+        left: 17%;
+        object-fit: cover;
+        object-position: top;
+        top: 3%;
+        transform: rotateX(45deg);
+        transform-style: preserve-3d;
+        width: 47%;
+      }
+  
+      @include capa-Imagen($coverImg: contain);
+    }
+  }
+
+  .columna-derecha-surf {
+    grid-column: 21 / 23;
+    grid-row: 2 / 6;
+    position: relative;
+    z-index: 1;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .camino-ocio-principal {
+    bottom: -1vh;
+    height: 103vh;
+    position: absolute;
+    right: 0vw;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .seccion-principal-ocio {
+    min-height: 90vh;
+    width: 100vw;
+
+    .lineas-inmersion {
+      height: 100%;
+      left: 1%;
+      position: absolute;
+      z-index: 0;
+      width: 5vw;
+    }
+  
+    .intro-pagina {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      grid-column: 2 / 19;
+      grid-row: 1 / 4;
+  
+      @include capa-Imagen($coverImg: contain);
+  
+      .text-titulo-ocio {
+        font-family: $tipoEspecial;
+        font-size: calc(1em + 7vw);
+        line-height: 5vh;
+        position: relative;
+        width: max-content;
+        z-index: 99;
+      }
+    }
+
+    .boton-info {
+      grid-column: 15 / 17;
+      grid-row: 5 / 6;
+      position: relative;
+      z-index: 9;
+    }
+  
+    .img-oblicuas {
+      grid-column: 1 / 11;
+      grid-row: 5 / 6;
+      position: relative;
+      z-index: 1;
+  
+      @include capa-Imagen($coverImg: contain);
+    }
+  
+    .logo-marepolis {
+      grid-column: 6 / 14;
+      grid-row: 5 / 10;
+      position: relative;
+      z-index: 1;
+  
+      @include capa-Imagen($coverImg: contain);
+    }
+  
+    .capa-buzo {
+      grid-column: 2 / 8;
+      grid-row: 7 / 10;
+      position: relative;
+      z-index: 1;
+  
+      @include capa-Imagen($coverImg: contain);
+    }
+  
+    .logo-surf {
+      align-self: stretch;
+      display: flex;
+      grid-column: 16 / 22;
+      grid-row: 8 / 11;
+      position: relative;
+      position: relative;
+      z-index: 1;
+  
+      @include capa-Imagen($coverImg: contain);
+    }
+  
+    .columna-central-surf {
+      align-self: stretch;
+      display: flex;
+      grid-column: 7 / 25;
+      grid-row: 10 / 13;
+      position: relative;
+      z-index: 1;
+
+      .enlace-surf {
+        perspective: 220px;
+        perspective-origin: 35%;
+        position: relative;
+        width: 100%;
+
+        video { 
+          bottom: 0;
+          height: 100%;
+          left: 17%;
+          object-fit: cover;
+          object-position: top;
+          top: 3%;
+          transform: rotateX(50deg);
+          transform-style: preserve-3d;
+          width: 47%;
+        }
+
+        @include capa-Imagen($coverImg: contain);
+      }
+    }
+
+    .columna-derecha-surf {
+      grid-column: 19 / 23;
+      grid-row: 7 / 9;
+      position: relative;
+      z-index: 1;
+  
+      @include capa-Imagen($coverImg: contain);
+    }
+
+    .camino-ocio-principal {
+      bottom: -1vh;
+      height: 103vh;
+      position: absolute;
+      right: 0vw;
+      z-index: 0;
+    }
+  }
+}

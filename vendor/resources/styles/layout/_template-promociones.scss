@@ -1,0 +1,164 @@
+.page-template-template-promociones {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-bottom: 9vh;
+
+  .seccion-principal {
+    max-height: 75vh;
+
+    .titSeccion {
+      h1 {
+        color: $negro;
+        font-size: calc(1em + 6vw);
+        line-height: 7vh;
+        padding: 8%;
+        align-items: center;
+        text-transform: uppercase;
+        width: 100%;
+        text-align: center;
+        font-family: $tipoEspecial;
+        height: 30vh;
+      }
+    }
+  }
+  
+  .seccion-promociones {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 10px 10px;
+    justify-content: space-evenly;
+
+    .cont-promocion {
+      display: none;
+      position: relative;
+      width: calc( 100% / 6);
+      
+      .img-promocion {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .texto-descripcion {
+        display: none;
+      }
+
+      .titulo-promocion {
+        display: none;
+      }
+    }
+
+    .activa {
+      display: flex;
+    }
+  }
+
+  .menu-categoria {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1400px;
+    margin: 2% auto;
+
+    .item-categoria {
+      width: 33%;
+      margin: 0 10px;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: $principal;
+      color: $blanco;
+      padding: 5px 0;
+      line-height: 1.2;
+      font-family: Oswald, sans-serif;
+      font-size: calc(1em + .9vw);
+
+      &:hover {
+        background-color: $negro;
+        color: $blanco;
+        cursor: pointer;
+      }
+     }
+     
+     .btn-activo {
+      background-color: $negro;
+      color: $principal;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .page-template-template-promociones {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-bottom: 9vh;
+  
+    .seccion-principal {
+      max-height: 25vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      .titSeccion {
+        height: 25vh;
+        margin-top: 10vh;
+
+        h1 {
+          color: $negro;
+          font-size: calc(1em + 6vw);
+          line-height: 7vh;
+          padding: 8%;
+          align-items: center;
+          text-transform: uppercase;
+          width: 100%;
+          text-align: center;
+          font-family: $tipoEspecial;
+          height: auto;
+        }
+      }
+    }
+    
+    .seccion-promociones {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 10px 10px;
+      justify-content: space-evenly;
+  
+      .cont-promocion {
+        width: 45%;
+
+        .img-promocion {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+  
+        .texto-descripcion {
+          display: none;
+        }
+  
+        .titulo-promocion {
+          display: none;
+        }
+      }
+    }
+
+    .menu-categoria {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      flex-wrap: wrap;
+      max-width: 1400px;
+      margin: 2% auto;
+  
+      .item-categoria {
+        width: 45%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

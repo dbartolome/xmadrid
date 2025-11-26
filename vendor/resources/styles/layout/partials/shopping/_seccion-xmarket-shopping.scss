@@ -1,0 +1,65 @@
+.sec-xmarket {
+  background-size: cover;
+  width: 45vw;
+  display: flex;
+  z-index: 9;
+
+  .item1-xmarket {
+    position: relative;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .final-seccion-taste {
+    position: relative;
+    width: 20%;
+    height: 100%;
+
+    @include capa-Imagen($coverImg: contain);
+
+    .final-vertical {
+      display: block;
+    }
+
+    .final-horizontal {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sec-xmarket {
+    background-size: cover;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    padding: 10vw 0;
+  
+    .item1-xmarket {
+      position: relative;
+      max-width: 70vw;
+
+      @include capa-Imagen($coverImg: contain);
+    }
+  
+    .final-seccion-taste {
+      position: relative;
+      width: 100%;
+  
+      @include capa-Imagen($coverImg: contain);
+
+      .final-vertical {
+        display: none;
+      }
+  
+      .final-horizontal {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

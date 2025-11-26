@@ -1,0 +1,92 @@
+.panel-cinco {
+  display: grid;
+  font-size: 1.5em;
+  grid-template-columns: repeat( 4, calc(100% / 4) );
+  grid-template-rows: repeat( 3, calc(100% / 3) );
+  padding: 3% 4%;
+  position: relative;
+  position: relative;
+  width: 50vw;
+
+  .fondo-escalador {
+    height: 100%;
+    left: -18%;
+    position: absolute;
+  }
+
+  .div-textexperience {
+    display: flex;
+    flex-direction: column;
+    font-family: $tipoEspecial;
+    font-size: calc(1em + 5vw);
+    font-weight: 800;
+    grid-column: 1 / 5;
+    grid-row: 1 / 4;
+    justify-content: center;
+    justify-content: space-around;
+    line-height: 1;
+    position: relative;
+    text-align: right;
+    -webkit-text-stroke: 2px $blanco;
+    -webkit-text-fill-color: #000;
+    text-transform: uppercase;
+    z-index: 2;
+    z-index: 99;
+
+    a {
+      color: $negro;
+
+      &:hover {
+        color: $principal;
+      }
+    }
+  }
+
+  .enlaceTaste {
+    position: relative;
+
+    .link-secciones-menu {
+      &:hover {
+        background: url(https://x-madrid.santacc.homes/wp-content/themes/xmadtema/resources/images/seccionIntroExperience/comida.gif);
+        -webkit-background-clip: text;
+        background-position: 50%;
+        background-repeat: repeat;
+        -webkit-text-fill-color: #0000;
+      }
+    }
+  }
+
+  .enlaceOcio {
+    .link-secciones-menu {
+      &:hover {
+        color: $principal;
+        -webkit-text-stroke: 2px #000;
+        -webkit-text-fill-color: $principal;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat( 6, calc(100% / 6) );
+    grid-template-rows: auto;
+    height: auto;
+    padding: 4% 2%;
+    width: 100vw;
+
+    .fondo-escalador {
+      align-self: stretch;
+      grid-column: 1/6;
+      grid-row: 3/4;
+      height: 100%;
+      position: relative;
+
+      @include capa-Imagen;
+    }
+  
+    .div-textexperience {
+      font-size: calc(1em + 7vw);
+      grid-column: 1 / 6;
+      grid-row: 3 / 6;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.sec-mediterranea {
+  background-position: bottom;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat( 12, calc(100% / 12) );
+  grid-template-rows: repeat( 12, calc(100% / 12) );
+  width: 100vw;
+  z-index: 9;
+
+  .item1-mediterranea {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    grid-column: 2 / 12;
+    grid-row: 1 / 3;
+    justify-content: center;
+    position: relative;
+    z-index: 999;
+
+    .tit-seccion-mediterranea {
+      font-family: $tipoEspecial;
+      font-size: calc(1em + 5vw);
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  @include seccion-logos($posicion-col-inicio: 1, $posicion-col-fin: 10, $posicion-row-inicio: 3,  $posicion-row-fin: 12, $numero-col: calc(80% / 4), $altura-contenedor: 90%, $alturaRow: 30%);
+
+  .imagen-plato {
+    grid-column: 10 / 13;
+    grid-row: 4 / 12;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .camino-mediterranea {
+    bottom: -5vh;
+    height: 109vh;
+    position: absolute;
+    right: -19vw;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sec-mediterranea {
+
+    @include responsive-seccion-completa();
+
+    .item1-mediterranea {
+      .tit-seccion-mediterranea {
+        font-size: calc(1em + 7vw);
+      }
+    }
+
+    @include responsive-seccion-logos();
+
+    .imagen-plato {
+      max-width: 40vw;
+      margin: 0 auto;
+    }
+
+    .camino-mediterranea {
+      display: none;
+    }
+  }
+}

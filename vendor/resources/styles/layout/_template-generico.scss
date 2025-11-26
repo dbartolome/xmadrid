@@ -1,0 +1,29 @@
+.page-template-template-generico {
+  .main {
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 6%;
+
+    .page-header {
+      h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        margin: 3% auto;
+        color: $principal;
+      }
+    }
+  }
+
+  @media (max-width: 768px){
+    .page-header {
+      margin-top: 18%;
+        h1 {
+          font-size: 2rem;
+        }
+      }
+  }
+}

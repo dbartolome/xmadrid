@@ -1,0 +1,222 @@
+.panel-dos {
+  display: grid;
+  font-size: 1.5em;
+  gap: 0 20px;
+  grid-template-columns: repeat( 12, calc(100% / 12) );
+  grid-template-rows: repeat( 12, calc(100% / 12) );
+  padding: 0;
+  position: relative;
+  width: 100vw;
+
+  .mancha-superior {
+    align-self: stretch;
+    grid-column: 1 / 4;
+    grid-row: 1 / 5;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .grid-flechas {
+    align-self: stretch;
+    grid-column: 7 / 9;
+    grid-row: 2 / 4;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .grid-sup-der {
+    align-content: center;
+    align-self: stretch;
+    grid-column: 8 / 12;
+    grid-row: 2 / 8;
+    position: relative;
+    z-index: 999;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .grid-destacado-uno {
+    align-self: stretch;
+    grid-column: 1 / 5;
+    grid-row: 5 / 9;
+    overflow: hidden;
+    position: relative;
+    translate: 0 -10%;
+
+    .cont-capa-uno {
+      bottom: 0;
+      left: -1vw;
+      position: absolute;
+      transform: rotateZ(18deg);
+
+      #banda-uno {
+        display: block;
+        height: 9vh;
+      }
+    }
+
+    #imggrid-destacado-uno {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .img-discontinua {
+    height: 100%;
+    position: absolute;
+    right: -30%;
+    z-index: 1;
+  }
+
+  .grid-destacado-dos {
+    align-self: stretch;
+    grid-column: 5 / 7;
+    grid-row: 2 / 9;
+    position: relative;
+    z-index: 99;
+
+    @include capa-Imagen;
+  }
+
+  .tit-shop {
+    align-items: center;
+    display: flex;
+    font-family: $tipoEspecial;
+    font-size: calc( 1em + 16vw );
+    font-weight: bold;
+    grid-column: 1 / 12;
+    grid-row: 9 / 13;
+    line-height: 1;
+    position: relative;
+    z-index: 999;
+
+    .link-secciones {
+      &:hover {
+        color: $principal;
+        -webkit-text-fill-color: #0000;
+        background: $principal url(https://x-madrid.santacc.homes/wp-content/themes/xmadtema/resources/images/home/billetes_callendo.gif);
+        -webkit-background-clip: text;
+        background-position: 50%;
+        background-repeat: repeat;
+      }
+    }
+
+    .img-shopping {
+      bottom: 0;
+      max-width: 20%;
+      position: absolute;
+    }
+  }
+
+  .capa-svg {
+    bottom: -9vh;
+    height: 110vh;
+    left: 37%;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+  }
+
+  @media (max-width: 768px) {
+    gap: 0;
+    grid-template-rows: auto;
+    height: auto;
+    min-height: 95vh;
+    width: 100vw;
+
+    .mancha-superior {
+      align-self: stretch;
+      grid-column: 1 / 7;
+      grid-row: 1 / 4;
+  
+      img {
+        height: 100%;
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+
+    .grid-flechas {
+     display: none;
+    }
+  
+    .grid-sup-der {
+      align-content: center;
+      align-self: stretch;
+      grid-column: 7 / 13;
+      grid-row: 1 / 6;
+      position: relative;
+      z-index: 99;
+  
+      img {
+        height: 80%;
+        object-fit: scale-down;
+        width: 80%;
+      }
+    }
+  
+    .grid-destacado-uno {
+      align-self: stretch;
+      grid-column: 1 / 8;
+      grid-row: 6 / 9;
+      position: relative;
+      z-index: 99;
+  
+      .cont-capa-uno {
+        bottom: 0;
+        position: absolute;
+        transform: rotateZ(18deg);
+  
+        #banda-uno {
+          display: block;
+          height: 9vh;
+        }
+      }
+  
+      #imggrid-destacado-uno {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  
+    .grid-destacado-dos {
+      align-self: stretch;
+      grid-column: 8 / 13;
+      grid-row: 6 / 9;
+      position: relative;
+      z-index: 99;
+  
+      img {
+        height: 100%;
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+  
+    .tit-shop {
+      align-items: center;
+      display: flex;
+      font-family: $tipoEspecial;
+      font-size: 20vw;
+      font-weight: bold;
+      grid-column: 1 / 12;
+      grid-row: 9 / 13;
+      line-height: 1;
+      position: relative;
+      z-index: 9;
+  
+      .img-shopping {
+        bottom: 0;
+        max-width: 20%;
+        position: absolute;
+        z-index: 99;
+      }
+    }
+
+    .capa-svg {
+      display: none;
+    }
+  }
+}

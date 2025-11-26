@@ -1,0 +1,70 @@
+.sec-around {
+  background-position: bottom;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat( 12, calc(100% / 12) );
+  grid-template-rows: repeat( 12, calc(100% / 12) );
+  width: 100vw;
+  z-index: 8;
+  
+  .item1-around {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    grid-column: 1 / 13;
+    grid-row: 2 / 4;
+    justify-content: center;
+    position: relative;
+    z-index: 999;
+
+    .tit-seccion-around {
+      font-family: $tipoEspecial;
+      font-size: calc(1em + 5vw);
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  @include seccion-logos($posicion-col-inicio: 2, $posicion-col-fin: 11, $posicion-row-inicio: 4,  $posicion-row-fin: 11, $numero-col: calc(80% / 4));
+
+  .imagen-plato {
+    grid-column: 1 / 4;
+    grid-row: 9 / 13;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .camino-arround {
+    bottom: -5vh;
+    height: 109vh;
+    position: absolute;
+    right: -21vw;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sec-around {
+
+    @include responsive-seccion-completa();
+
+    .item1-around {
+      .tit-seccion-around {
+        font-size: calc(1em + 7vw);
+      }
+    }
+
+    @include responsive-seccion-logos();
+
+    .imagen-plato {
+      max-width: 60vw;
+      margin: 0 auto;
+    }
+
+    .camino-arround {
+      display: none;
+    }
+  }
+}

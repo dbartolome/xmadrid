@@ -1,0 +1,114 @@
+.sec-hobbies {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat( 12, calc(100% / 12) );
+  grid-template-rows: repeat( 12, calc(100% / 12) );
+  height: 100%;
+  background-position: center;
+  z-index: 8;
+
+  .item1-hobbies {
+    display: flex;
+    grid-column: 1 / 2;
+    grid-row: 1 / 12;
+    position: relative;
+    justify-content: end;
+    text-align: center;
+
+    .tit-seccion-hobbies {
+      line-height: 1;
+      font-weight: bold;
+      font-family: $tipoEspecial;
+      font-size: calc(1em + 5vw);
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+  }
+
+  .secion-rayos {
+    background-size: cover;
+    grid-column: 3 / 12;
+    grid-row: 1 / 13;
+    background-position: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat( 12, calc(100% / 12) );
+    grid-template-rows: repeat( 12, calc(100% / 12) );
+
+    @include seccion-logos-shop($posicion-col-inicio: 2, $posicion-col-fin: 12, $posicion-row-inicio: 2,  $posicion-row-fin: 12, $numero-col: calc(80% / 3), $altura-contenedor: 85%);
+
+    .cont-logos { 
+      align-self: center;
+
+      .link-logo {
+        max-height: 31%;
+
+        img {
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .img-friki {
+    grid-column: 1 / 3;
+    grid-row: 8 / 12;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .camino-hobbies {
+    bottom: -5vh;
+    height: 109vh;
+    position: absolute;
+    right: -21vw;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sec-hobbies {
+    
+    @include responsive-seccion-completa();
+
+    padding-bottom: 0;
+
+    .item1-hobbies {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+  
+      .tit-seccion-hobbies {
+        line-height: 1;
+        font-weight: bold;
+        font-family: $tipoEspecial;
+        font-size: calc( 1em + 5vw) ;
+        text-transform: uppercase;
+        writing-mode: initial;
+        transform: none;
+      }
+    }
+  
+    .secion-rayos {
+      background-size: cover;
+      grid-column: 1 / 6;
+      grid-row: 2 / 3;
+      background-position: center;
+      align-items: center;
+      display: flex;
+
+      @include responsive-seccion-logos();
+
+    }
+
+    .img-friki {
+      max-width: 30vw;
+      margin: 0 auto;
+    }
+
+    .camino-hobbies {
+      display: none;
+    }
+  }
+}

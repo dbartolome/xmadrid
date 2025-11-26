@@ -1,0 +1,25 @@
+<div class="seccion-extreme-ocio">
+  <div class="logo-intro">
+    <div class="texto-extreme">Extreme</div>
+    <img src="/wp-content/themes/xmadtema/resources/images/ocioydeporte/extreme/FUN.webp">
+  </div>  
+  <div class="capa-globos">
+    <a href="/ocioydeporte/locomotion/"><img src="/wp-content/themes/xmadtema/resources/images/ocioydeporte/extreme/globos.webp"></a>
+  </div>
+  <div class="logo-locomotion">
+    <a href="/ocioydeporte/locomotion/" class="link-ocio"><img src="/wp-content/themes/xmadtema/resources/images/ocioydeporte/extreme/locomotion.webp"></a>
+  </div>
+  <div class="logo-cqb">
+    <a href="/ocioydeporte/cqb/" class="link-ocio"><img src="/wp-content/themes/xmadtema/resources/images/ocioydeporte/extreme/cqb.webp"></a>
+  </div>
+  <div class="logo-hachodromo">
+    <a href="/ocioydeporte/el-hachodromo/" class="link-ocio"><img src="/wp-content/themes/xmadtema/resources/images/ocioydeporte/extreme/hachodromo.webp"></a>
+  </div>
+  <div class="logo-casasuenos">
+    <a href="/ocioydeporte/dreamhouse/" class="link-ocio"><img src="/wp-content/themes/xmadtema/resources/images/ocioydeporte/extreme/casasuenos.webp"></a>
+  </div>
+<div class="camino-extreme">
+@field('svgExtreme')
+
+</div>
+</div>

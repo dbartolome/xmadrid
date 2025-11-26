@@ -1,0 +1,218 @@
+footer {
+    bottom: 0;
+    height: 6vh;
+    left: 0;
+    position: fixed;
+    flex-direction: row;
+    width: 100vw;
+    z-index: 101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(256, 256, 256, 0.7);
+
+    .btn-newsletter {
+        background-color: $principal;
+        border: $blanco solid 2px;
+        color: $blanco;
+        border-radius: 50px;
+        padding: 5px 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: 15%;
+        max-width: min-content;
+
+        .ico-neswletter {
+            margin-right: 10px;
+
+            svg {
+                fill: $blanco;
+                height: 1.6rem;
+            }
+        }
+        
+        .texto-newsletter {
+            text-transform: uppercase;
+        }
+
+        &:hover {
+            border: $principal solid 2px;
+            color: $principal;
+            background-color: transparent;
+            cursor: pointer;
+
+            .ico-neswletter {
+                svg {
+                    fill: $principal;
+                }
+            }
+        }
+    }
+
+    .redes-footer {
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        left: 1vw;
+        width: 10%;
+        flex-direction: column;
+
+        .social {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            padding: 1% 0;
+
+            .icono-social {
+                max-width: 20%;
+                padding: 3%;
+                color: $negro;
+                display: flex;
+                align-items: center;
+
+                svg {
+                    width: 100%;
+                    height: 75%;
+                    stroke: $blanco;
+                    stroke-width: 10px;
+                }
+
+                &:hover {
+                    svg {
+                        width: 100%;
+                        height: 75%;
+                        stroke: $negro;
+                        fill: $principal;
+                        stroke-width: 10px;
+                        transform: scale(1.1);
+                        transition: 500ms;
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-footer {
+        font-weight: 900;
+        width: 80%;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        position: relative;
+        height: auto;
+        flex-direction: column;
+
+        .redes-footer {
+            display: flex;
+            flex-direction: column;
+            left: 3vw;
+            max-height: 15vh;
+            max-width: 35vw;
+            position: relative;
+            width: 100%;
+            
+            .social {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                padding: 1% 0;
+    
+                .icono-social {
+                    max-width: 20%;
+                    padding: 1%;
+                    color: $negro;
+    
+                    svg {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .btn-newsletter {
+            width: 45%;
+            max-width: max-content;
+        }
+
+        .menu-footer {
+            width: 100vw;
+            line-height: 1;
+            text-align: center;
+
+            a {
+                font-size: calc(0.8em + 0.2vw);
+            }
+        }
+    }
+}
+
+.cont-formulario {
+    align-items: center;
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    z-index: 99999999;
+
+    .capa-formulario {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 4vh;
+
+        .ico-cerrar {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .encabezado-form {
+            .titular-encabezado {
+                color: $principal;
+                text-transform: uppercase;
+                font-size: calc(1rem + 2vh);
+            }
+            
+            .descripcion-encabezado {
+                font-size: calc(1rem + 0.5vh);
+            }
+        }
+        
+        .int-formulario {
+          .gform_button {
+            background-color: $principal;
+            color: $blanco;
+            border: 2px solid $blanco;
+            text-transform: uppercase;
+            font-size: calc(1em + 0.1vw);
+            border-radius: 50px;
+            padding: 5px 2vw;
+
+            &:hover {
+                background-color: $blanco;
+                color: $principal;
+                border: 2px solid $principal;
+            }
+          }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .cont-formulario {    
+        .capa-formulario {
+            .encabezado-form {
+                img {
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import "~hamburgers/_sass/hamburgers/hamburgers";
+
+@import "common/variable";
+@import "common/global";
+@import "layout/header";
+@import "layout/front-page";
+@import "layout/template-info";
+@import "layout/template-generico";
+@import "layout/template-shopping";
+@import "layout/template-taste";
+@import "layout/template-ocioydeporte";
+@import "layout/template-cine";
+@import "layout/template-eventos";
+@import "layout/template-listadoeventos";
+@import "layout/template-servicios";
+@import "layout/template-promociones";
+@import "layout/template-orgullofriki";
+//@import "layout/single-ocioydeporte";
+//@import "layout/single-shop";
+@import "layout/single-evento";
+@import "layout/single";
+@import "layout/template-petfriendly";
+@import "layout/template-xmarket";
+@import "layout/footer";

@@ -1,0 +1,91 @@
+.panel-uno {
+  display: flex;
+  font-size: 1.5em;
+  position: relative;
+  min-width: 90vw;
+  padding: 2% 0 0 2%;
+  justify-content: space-evenly;
+
+  .composicion-slider {
+    position: relative;
+    justify-self: stretch;
+    width: 75%;
+
+    .fondo-mancha {
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+    }
+
+    .fondo-slider {
+      height: 100%;
+      left: 0;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      z-index: 100;
+      padding: 0 4%;
+    }
+  }
+
+  .flecha-superior {
+    position: relative;
+    z-index: 3;
+    width: 10%;
+    align-self: baseline;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .capa-camino {
+    bottom: -11vh;
+    height: 100%;
+    left: 13vw;
+    position: absolute;
+    width: 90vw;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .panel-uno {
+    grid-template-columns: repeat(12, calc(100% / 12));
+    grid-template-rows: repeat(12, calc(100% / 12));
+    width: 100vw;
+    min-height: 80vh;
+    grid-row-gap: 0;
+    padding: 2px;
+
+    .composicion-slider {
+      grid-column: 1 / 13;
+    }
+
+    .composicion-imagenes {
+      grid-column: 1 / 13;
+      grid-row: 1 / 13;
+
+      .fondo-buceo {
+        max-width: 100%;
+        z-index: 100;
+        object-fit: cover;
+        height: 100%;
+        padding: 0;
+      }
+    }
+
+    .flecha-superior {
+      grid-column: 10 / 13;
+      grid-row: 10 / 13;
+      position: relative;
+      z-index: 99;
+      transform: rotateZ(126deg);
+  
+      @include capa-Imagen($coverImg: contain);
+    }
+
+    .capa-camino {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+.panel-tres {
+  display: grid;
+  font-size: 1.5em;
+  position: relative;
+  width: max-content;
+  height: 100vh;
+
+  .capa-telefono {
+    position: relative;
+
+    .telefono {
+      display: block;
+      height: 100%;
+    }
+  
+    .video-tel {
+      height: 76%;
+      left: 10%;
+      object-fit: contain;
+      position: absolute;
+      top: 12%;
+      width: 35vw;
+      z-index: 9;
+      object-position: initial;
+    }
+  }
+
+  @keyframes entrada-imagen {
+    from {
+      width: 0;
+    }
+  
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes salida-imagen {
+    from {
+      width: 100%;
+    }
+  
+    to {
+      width: 0;
+    }
+  }
+
+  .div-petfriendly {
+    position: absolute;
+    z-index: 999;
+    top: 3vh;
+    max-width: 15vh;
+
+    .perrito-capa {
+      border-radius: 150px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 0;
+    }
+
+    .huella-icono {
+      display: block;
+    }
+
+    &:hover {
+      .perrito-capa {
+        animation-name: entrada-imagen;
+        animation-fill-mode: forwards;
+      }
+
+      .huella-icono {
+        opacity: 0;
+      }  
+    }
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .img-tik-tok {
+    position: absolute;
+    top: 23%;
+    right: 12%;
+    max-width: 18%;
+    z-index: 999;
+  }
+
+  .img-instagram {
+    position: absolute;
+    top: 50%;
+    right: 12%;
+    max-width: 18%;
+    z-index: 999;
+  }
+
+  @media (max-width: 768px) {
+    height: auto;
+    width: auto;
+
+    .capa-telefono {
+      position: relative;
+
+      .telefono {
+        display: block;
+        height: auto;
+        width: 100%;
+      }
+  
+      .video-tel {
+        height: 76%;
+        left: 20%;
+        object-fit: cover;
+        position: absolute;
+        top: 12%;
+        width: 50vw;
+        z-index: 9;
+        object-position: initial;
+      }
+    }
+
+    .div-petfriendly {
+      position: absolute;
+      z-index: 999;
+      top: 3vh;
+      left: 3vh;
+      max-width: 15vh;
+
+      img {
+        width: 80%;
+      }
+    }
+  }
+}

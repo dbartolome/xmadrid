@@ -1,0 +1,69 @@
+.sec-accesories {
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat( 12, calc(100% / 12) );
+  grid-template-rows: repeat( 12, calc(100% / 12) );
+  width: 100vw;
+  z-index: 8;
+
+  .item1-accesories {
+    grid-column: 1 / 13;
+    grid-row: 2 / 3;
+    position: relative;
+    z-index: 9;
+
+    .tit-seccion-accesories {
+      font-family: $tipoEspecial;
+      font-size: calc(1rem + 5vw);
+      font-weight: bold;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  @include seccion-logos-shop($posicion-col-inicio: 4, $posicion-col-fin: 12, $posicion-row-inicio: 4,  $posicion-row-fin: 12, $numero-col: calc(80% / 3), $altura-contenedor: 100%);
+
+  .img-globos {
+    grid-column: 1 / 4;
+    grid-row: 3 / 12;
+    position: relative;
+    z-index: 99;
+
+    @include capa-Imagen($coverImg: contain);
+  }
+
+  .camino-accesories {
+    bottom: -5vh;
+    height: 109vh;
+    position: absolute;
+    right: -40vw;
+    z-index: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sec-accesories {
+
+    @include responsive-seccion-completa();
+
+    .item1-accesories {
+      position: relative;
+
+      .tit-seccion-accesories {
+        font-size: calc(1rem + 8vw);
+      }
+    }
+
+    @include responsive-seccion-logos();
+
+    .img-globos {
+      max-width: 30vw;
+      margin: 0 auto;
+    }
+
+    .camino-accesories {
+      display: none;
+    }
+  }
+}
