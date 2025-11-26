@@ -5,7 +5,7 @@ namespace App\Fields;
 use Log1x\AcfComposer\Field;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-class orgullofriki extends Field
+class eventoespecial extends Field
 {
     /**
      * The field group.
@@ -14,43 +14,43 @@ class orgullofriki extends Field
      */
     public function fields()
     {
-        $orgullofriki  = new FieldsBuilder('orgullofriki');
+        $eventoespecial  = new FieldsBuilder('eventoespecial');
 
-        $orgullofriki
+        $eventoespecial
         ->setLocation('post_type', '==', 'page')
-        ->and('page_template', '==', 'template-orgullofriki.blade.php');
+        ->and('page_template', '==', 'template-eventoespecial.blade.php');
 
-        $orgullofriki
+        $eventoespecial
    
 
-        ->addImage('destacadoOrgullo', [
-            'label' => 'Imagen para el header de la pagina de orgullo',
+        ->addImage('destacadoEspecial', [
+            'label' => 'Imagen para el header de la página de evento',
         ])
-        ->addWysiwyg('textoOrgulllo', [
-            'label' => 'Presentacion para el dia del orgullo',
+        ->addWysiwyg('textoEspecial', [
+            'label' => 'Presentación para el evento especial',
         ])
         ->addFile('videoFondo', [
             'label' => 'video para el fondo',
         ])
-        ->addRepeater('evcentosOrgullo', [
-            'label' => 'eventos del dia del orgullo',
+        ->addRepeater('eventosEspecial', [
+            'label' => 'Eventos de la página especial',
             'button_label' => 'AGREGAR EVENTO',
             'layout' => 'row',
         ])
-        ->addText('tituloEvento', [
-            'label' => 'Titulo para el veneto',
+        ->addTextarea('tituloEvento', [
+            'label' => 'Título para el evento',
         ])
         ->addTextarea('descripcionEvento', [
             'label' => 'Texto para el evento',
         ])
         ->addColorPicker('colorFondo', [
-            'label' => 'Color de fondo del recuadro',
+            'label' => 'Color de fondo del recuadro del evento',
         ])
         ->addColorPicker('colorTexto', [
             'label' => 'Color de texto del evento',
         ])
         ->endRepeater();
 
-        return $orgullofriki->build();
+        return $eventoespecial->build();
     }
 }

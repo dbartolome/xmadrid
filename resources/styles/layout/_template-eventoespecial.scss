@@ -1,0 +1,282 @@
+.page-template-template-eventoespecial {
+  padding-bottom: 5%;
+
+  .hamburger {
+    display: none;
+  }
+
+  .cont-superior {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 9;
+
+    .imagen-header {
+      width: 100%;
+    }
+  }
+
+  .presentacion {
+    max-width: 1400px;
+    width: 90%;
+    margin: 1% auto;
+    position: relative;
+    z-index: 9;
+    padding: 1%;
+    border-radius: 15px;
+    background-color: $blanco;
+  }
+
+  .cont-actividades {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 9;
+    justify-content: space-between;
+    padding: 0;
+    gap: 1.2rem;
+
+    .item-actividad {
+      width: 100%;
+      background-color: $principal;
+      padding: 1.5% 3%;
+      margin: 0;
+      border-radius: 12px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+
+      .titulo-actividad {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        color: #fff;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        text-transform: uppercase;
+        font-size: calc(1em + 0.4vw);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin: 0;
+
+        &::after {
+          content: "▼";
+          position: relative;
+          right: 0;
+          color: $blanco;
+          font-size: 0.85em;
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          display: inline-block;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        transform: translateY(-3px);
+
+        .titulo-actividad::after {
+          transform: scale(1.1);
+        }
+      }
+      
+      .texto-actividad {
+        hr.separador {
+          margin: 1.5% 0;
+          border: none;
+          height: 2px;
+          background: linear-gradient(to right, rgba(255,255,255,0.2), rgba(255,255,255,0.5), rgba(255,255,255,0.2));
+        }
+
+        display: none;
+        color: #fff;
+        opacity: 0;
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 0;
+        font-size: calc(0.95em + 0.2vw);
+        line-height: 1.6;
+        overflow: hidden;
+
+        p, ul, h3 {
+          margin: 1rem 0;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        ul {
+          padding-left: 1.5rem;
+          
+          li {
+            margin-bottom: 0.5rem;
+          }
+        }
+
+        h3 {
+          font-size: calc(0.95em + 0.3vw);
+          font-weight: 600;
+          margin-top: 1.5rem;
+        }
+      }
+    }
+
+    .item-abierto {
+      width: 100%;
+      background: linear-gradient(135deg, $blanco 0%, rgba($blanco, 0.98) 100%);
+      color: $negro;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+
+      .texto-actividad {
+        display: block;
+        color: $negro;
+        opacity: 1;
+        padding: 2% 0;
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+      }
+
+      .titulo-actividad {
+        color: $principal;
+        text-shadow: none;
+
+        &::after {
+          content: "▲";
+          transform: rotate(180deg);
+        }
+      }
+    }
+  } 
+
+  .capa-video {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.3;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .texto-explciacion {
+    max-width: 1000px;
+    width: 80%;
+    margin: 2% auto;
+    text-align: center;
+    line-height: 1.2;
+    font-weight: bold;
+    font-size: calc(1em + 0.1vw);
+    padding: 1%;
+    border-radius: 15px;
+    background-color: $blanco;
+    position: relative;
+    z-index: 9;
+  }
+
+  // Media queries para responsive design
+  @media (max-width: 768px) {
+    .cont-actividades {
+      width: 95%;
+      gap: 0.8rem;
+
+      .item-actividad {
+        padding: 3% 4%;
+        border-radius: 10px;
+        margin: 0;
+
+        .titulo-actividad {
+          font-size: calc(0.95em + 1vw);
+          flex-direction: column;
+          align-items: flex-start;
+
+          &::after {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        .texto-actividad {
+          font-size: calc(0.9em + 0.3vw);
+        }
+      }
+
+      .item-abierto {
+        .titulo-actividad {
+          &::after {
+            transform: translateY(-50%) rotate(180deg);
+          }
+        }
+      }
+    }
+
+    .presentacion {
+      width: 95%;
+      padding: 3%;
+    }
+
+    .cont-superior {
+      width: 95%;
+    }
+
+    .texto-explciacion {
+      width: 90%;
+      font-size: calc(0.9em + 0.5vw);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cont-actividades {
+      width: 100%;
+      gap: 0.6rem;
+
+      .item-actividad {
+        padding: 3.5% 5%;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+        .titulo-actividad {
+          font-size: calc(0.9em + 1.2vw);
+
+          &::after {
+            font-size: 0.8em;
+          }
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+
+    .presentacion {
+      width: 100%;
+      padding: 4%;
+      margin: 2% auto;
+    }
+
+    .cont-superior {
+      width: 100%;
+    }
+
+    .hamburger {
+      display: block !important;
+    }
+  }
+}

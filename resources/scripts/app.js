@@ -18,7 +18,7 @@ import { singleEvento } from './singleEvento.js';
 import { interiores } from './interiores.js';
 import { petfriendly } from './petfriendly.js';
 import { funcionListadoEventos } from './listadoeventos.js';
-import { orgullofriki} from './orgullofriki.js';
+import { eventoespecial} from './eventoespecial.js';
 /**
  * Application entrypoint
  */
@@ -39,8 +39,8 @@ domReady(async () => {
   }
 
 
-  if (document.body.classList.contains('page-template-template-orgullofriki')) {
-    orgullofriki();
+  if (document.body.classList.contains('page-template-template-eventoespecial')) {
+    eventoespecial();
   }
 
   if (document.body.classList.contains('page-template-template-ocioydeporte')) {
