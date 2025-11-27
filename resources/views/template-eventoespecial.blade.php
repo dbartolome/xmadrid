@@ -68,6 +68,6 @@ if( have_rows('eventosEspecial') ) {
     </div>
 
 <div class="snowflakes" aria-hidden="true"></div>
-<div class="texto-explciacion">*Las actividades, eventos, concursos y conciertos podrían sufrir modificaciones de horario, ubicación o contenido.</div>
+<div class="texto-explciacion">* LOS HORARIOS Y LAS ACTIVIDADES PODRÍAN SUFRIR MODIFICACIONES Y/O CANCELACIONES.</div>
   @endwhile
 @endsection
