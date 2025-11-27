@@ -6,6 +6,7 @@
 $destacadoEspecial = get_field('destacadoEspecial');
 $textoEspecial = get_field('textoEspecial');
 $videoFondo = get_field('videoFondo');
+$archivoPdf = get_field('archivoPdf');
 
 
 
@@ -25,7 +26,7 @@ if( have_rows('eventosEspecial') ) {
 
       $contEventos .= '<div class="item-actividad" role="button" tabindex="0" aria-expanded="false">
                         <div class="titulo-actividad">'.$tituloEvento.'</div>
-                        <div class="texto-actividad"><hr class="separador">'.$descripcionEvento .'</div></div>';
+                        <div class="texto-actividad"><hr class="separador">'.$descripcionEvento.'</div></div>';
     // End loop.
          }
 
@@ -51,10 +52,22 @@ if( have_rows('eventosEspecial') ) {
     <?php echo $textoEspecial; ?>
   </div>
 
+  <?php if($archivoPdf): ?>
+  <div class="contenedor-boton-pdf-principal">
+    <a href="<?php echo $archivoPdf; ?>" class="boton-descargar-pdf" target="_blank">
+      <i class="fa-solid fa-gift"></i>
+      Descargar PDF
+      <i class="fa-solid fa-snowflake"></i>
+    </a>
+  </div>
+  <?php endif; ?>
+
     <div class="cont-actividades">
-    <?php echo $contEventos; ?>
+      
+      <?php echo $contEventos; ?>
     </div>
 
+<div class="snowflakes" aria-hidden="true"></div>
 <div class="texto-explciacion">*Las actividades, eventos, concursos y conciertos podrían sufrir modificaciones de horario, ubicación o contenido.</div>
   @endwhile
 @endsection

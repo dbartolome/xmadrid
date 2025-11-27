@@ -28,7 +28,64 @@
     z-index: 9;
     padding: 1%;
     border-radius: 15px;
-    background-color: $blanco;
+  }
+
+  // Botón PDF principal (entre presentación y eventos)
+  .contenedor-boton-pdf-principal {
+    max-width: 1400px;
+    width: 90%;
+    margin: 2% auto;
+    text-align: center;
+    position: relative;
+    z-index: 9;
+
+    .boton-descargar-pdf {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #eb2028 0%, #d41a20 100%);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: calc(0.95em + 0.3vw);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 6px 20px rgba(235, 32, 40, 0.35);
+      border: 2px solid #eb2028;
+
+      i {
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 1.3em;
+
+        &:first-child {
+          animation: giftBounce 2s ease-in-out infinite;
+        }
+
+        &:last-child {
+          animation: snowflakeTwirl 3s linear infinite;
+        }
+      }
+
+      &:hover {
+        background: linear-gradient(135deg, #d41a20 0%, #b01219 100%);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(235, 32, 40, 0.45);
+
+        i:first-child {
+          transform: scale(1.2) rotate(-15deg);
+        }
+
+        i:last-child {
+          transform: scale(1.1);
+        }
+      }
+
+      &:active {
+        transform: translateY(-1px);
+      }
+    }
   }
 
   .cont-actividades {
@@ -189,6 +246,19 @@
 
   // Media queries para responsive design
   @media (max-width: 768px) {
+    .contenedor-boton-pdf-principal {
+      width: 95%;
+
+      .boton-descargar-pdf {
+        padding: 0.8rem 1.5rem;
+        font-size: calc(0.9em + 0.2vw);
+
+        i {
+          font-size: 1.1em;
+        }
+      }
+    }
+
     .cont-actividades {
       width: 95%;
       gap: 0.8rem;
@@ -277,6 +347,59 @@
 
     .hamburger {
       display: block !important;
+    }
+  }
+
+  // Efecto de nieve
+  .snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+
+    .snow {
+      position: absolute;
+      top: -10vh;
+      font-size: calc(0.5em + 1vw);
+      animation: snowfall linear infinite;
+      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+    }
+  }
+
+  @keyframes snowfall {
+    0% {
+      transform: translateY(-10vh) rotate(0deg);
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(150vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  // Animaciones para el botón navideño
+  @keyframes giftBounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes snowflakeTwirl {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 }

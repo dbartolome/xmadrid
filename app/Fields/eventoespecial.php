@@ -32,6 +32,10 @@ class eventoespecial extends Field
         ->addFile('videoFondo', [
             'label' => 'video para el fondo',
         ])
+        ->addFile('archivoPdf', [
+            'label' => 'Archivo PDF para descargar',
+            'return_format' => 'url',
+        ])
         ->addRepeater('eventosEspecial', [
             'label' => 'Eventos de la página especial',
             'button_label' => 'AGREGAR EVENTO',
